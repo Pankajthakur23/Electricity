@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ElectricityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('create',[ElectricityController::class,'create']);
+Route::post('store',[ElectricityController::class,'store'])->name('store');
+Route::get('Index',[ElectricityController::class,'Index'])->name('Index');
+Route::get('edit/{id}',[ElectricityController::class,'edit'])->name('edit');
+Route::post('update/{electricity}',[ElectricityController::class,'update'])->name('update');
+Route::get('delete/{electricity}',[ElectricityController::class,'delete'])->name('delete');
